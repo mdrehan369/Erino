@@ -32,7 +32,7 @@ const contactSchema = new mongoose.Schema<IContact>({
         required: true,
         trim: true,
         index: true,
-        match: new RegExp(/^(\+?[1-9]{1,4}[ -]?)?(\(?\d{1,4}\)?[ -]?)?(\d{1,4}[ -]?\d{1,4}[ -]?\d{1,4})$/)
+        match: new RegExp(/^\d{10}$/)
     },
     company: {
         type: String,
@@ -44,6 +44,6 @@ const contactSchema = new mongoose.Schema<IContact>({
         required: true,
         trim: true
     },
-})
+}, { timestamps: true })
 
 export const contactModel = mongoose.model<IContact>("Contact", contactSchema)

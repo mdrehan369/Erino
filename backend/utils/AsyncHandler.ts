@@ -20,7 +20,7 @@ const asyncHandler = (
                 //     ...err,
                 //     message: err.message,
                 // })
-                console.log(err)
+                // console.log(err)
                 return res
                     .status(err.statusCode <= 500 ? err.statusCode : 500)
                     .json({
