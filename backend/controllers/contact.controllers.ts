@@ -87,7 +87,8 @@ const getAllContact = asyncHandler(async (req: Request, res: Response) => {
             }
           ]
         }
-      }, {
+      }
+      , {
         '$sort': {
           'createdAt': sort == "1" ? 1 : -1
         }
