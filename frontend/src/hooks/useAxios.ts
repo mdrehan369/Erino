@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import { axiosInstance } from '../utils/axiosInstance'
-import axios, { Axios } from 'axios'
 
 export const useAxios = (
     url: string,
