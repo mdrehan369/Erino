@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
-import { axiosInstance } from "../utils/axiosInstance";
-import axios, { Axios } from "axios";
+import { useEffect, useState } from 'react'
+import { axiosInstance } from '../utils/axiosInstance'
+import axios, { Axios } from 'axios'
 
-export const useAxios = (url: string, method: 'POST' | 'GET' | 'PUT' | 'DELETE') => {
-
+export const useAxios = (
+    url: string,
+    method: 'POST' | 'GET' | 'PUT' | 'DELETE',
+) => {
     const [response, setResponse] = useState<any>(null)
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -12,7 +14,7 @@ export const useAxios = (url: string, method: 'POST' | 'GET' | 'PUT' | 'DELETE')
         // const controller = new AbortController()
         ;(async () => {
             try {
-                console.log("Kaam shuru")
+                console.log('Kaam shuru')
                 setLoading(true)
                 const response = await axiosInstance({
                     url,
@@ -30,10 +32,9 @@ export const useAxios = (url: string, method: 'POST' | 'GET' | 'PUT' | 'DELETE')
         })()
 
         return () => {
-            console.log("kaam hogya")
+            console.log('kaam hogya')
         }
     }, [url])
 
     return [response, loading, error]
-
 }
